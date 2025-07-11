@@ -1,0 +1,21 @@
+DLS iCloud Backup Integrity
+========================================================================
+Scanning directory: ./2025-07
+Found 10 total file(s) to check.
+This script will ensure all of them are available locally.
+WARN: This may trigger large downloads from iCloud if files are not on this machine.
+Proceeding automatically with --yes flag.
+- [DOWNLOAD]   2025-07-01.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-02.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-03.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-04.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-05.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-06.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-07.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-08.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-09.md                                 ... SUCCESS
+- [DOWNLOAD]   2025-07-10.md                                 ... SUCCESS
+========================================================================
+🏁 Integrity check complete.
+Succeeded: 10 | Failed: 0
+========================================================================
