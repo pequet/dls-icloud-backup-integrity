@@ -1,10 +1,27 @@
 # DLS iCloud Backup Integrity Checker
 
+> [!WARNING]
+> **This script is ONLY meaningful for iCloud Drive directories.**
+>
+> Run it exclusively against paths under `$HOME/Library/Mobile Documents/` where macOS
+> "Optimize Mac Storage" may offload files to cloud-only placeholders.
+>
+> **Running it on a local folder (a git repo, a local drive, etc.) is completely pointless.**
+> On local files, `brctl download` is a no-op. The script will enumerate every file and
+> do nothing useful — do not run it there.
+>
+> **The TRI vault moved from iCloud → local Git in January 2026.** It is no longer an
+> iCloud path and should NOT be used as a target for this script.
+>
+> Valid iCloud targets look like:
+> - `$HOME/Library/Mobile Documents/com~apple~CloudDocs/`
+> - `$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/`
+
 A command-line tool to force the download of all files in a specified iCloud Drive directory, ensuring they are physically present on your Mac for local backups (e.g., Time Machine).
 
 The macOS "Optimize Mac Storage" feature can silently remove local copies of files, leaving only placeholders. Backups will only capture these placeholders, leading to data loss upon restoration. This script prevents that by reading every file, which triggers a download from iCloud if the file is not already local. It is the command-line equivalent of Finder's "Download Now" function.
 
-For this tool to be effective, you MUST disable "Optimize Mac Storage" first in **System Settings → Apple ID → iCloud → iCloud Drive**.
+For this tool to be effective, "Optimize Mac Storage" must be enabled in **System Settings → Apple ID → iCloud → iCloud Drive** (otherwise files are never offloaded, and the script has nothing to do).
 
 ## Architectural Context
 

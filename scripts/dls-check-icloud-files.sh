@@ -15,6 +15,13 @@ set -euo pipefail
 #   is currently only a cloud placeholder. This is critical for ensuring
 #   local backup solutions (like Time Machine) can back up all data.
 #
+# ┌──────────────────────────────────────────────────────────────────┐
+# │  WARNING: ONLY run on iCloud Drive paths.                        │
+# │  Target must be under $HOME/Library/Mobile Documents/            │
+# │  with "Optimize Mac Storage" ON (files may be offloaded).        │
+# │  On a local folder, brctl is a no-op — nothing useful happens.   │
+# └──────────────────────────────────────────────────────────────────┘
+#
 # Usage:
 #   ./scripts/dls-check-icloud-files.sh [DIRECTORY]
 #
